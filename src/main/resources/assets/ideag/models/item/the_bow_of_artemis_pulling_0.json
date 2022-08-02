@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ideag:item/the_bow_of_artemis_pulling_0"
+  }
+}
