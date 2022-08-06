@@ -7,7 +7,7 @@ import net.minecraft.world.item.Items;
 
 public class ModTiers {
     public static final ForgeTier HADES = new ForgeTier(20, 1900, 1f,
-            15f, 60, BlockTags.NEEDS_DIAMOND_TOOL,
+            25f, 60, BlockTags.NEEDS_DIAMOND_TOOL,
             () -> Ingredient.of(Items.NETHERITE_INGOT));
 
     public static final ForgeTier ARES = new ForgeTier(19, 2000, 0.9f,
@@ -15,6 +15,11 @@ public class ModTiers {
             () -> Ingredient.of(Items.REDSTONE));
 
     public static final ForgeTier THANATOS = new ForgeTier(50, 2000, 0.9f,
-            30f, 60, BlockTags.NEEDS_DIAMOND_TOOL,
+            20f, 60, BlockTags.NEEDS_DIAMOND_TOOL,
             () -> Ingredient.of(Items.REDSTONE));
+
+    public static final ForgeTier RALLEN = new ForgeTier(24, 650, 0.5f,
+            12f, 26, BlockTags.NEEDS_DIAMOND_TOOL,
+            () -> Ingredient.of(ModItems.RALLEN.get()));
+
 }

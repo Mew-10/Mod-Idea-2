@@ -6,6 +6,9 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.MagmaBlock;
+import net.minecraft.world.level.block.TntBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,9 +23,24 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, IdeagMod.MOD_ID);
 
     public static final RegistryObject<Block> CRACKED_MAGMA = registerBlock("cracked_magma",
-            () -> new Block(BlockBehaviour.Properties.of(Material.AMETHYST).strength(5f)
+            () -> new MagmaBlock(BlockBehaviour.Properties.of(Material.AMETHYST).strength(5f)
                     .requiresCorrectToolForDrops()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
+    public static final RegistryObject<Block> MAGMA_TNT = registerBlock("magma_tnt",
+            () -> new MagmaTntBlock(BlockBehaviour.Properties.of(Material.EXPLOSIVE).strength(5f)
+                    .requiresCorrectToolForDrops()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
+    public static final RegistryObject<Block> THE_RALLEN = registerBlock("the_rallen",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f)
+                    .requiresCorrectToolForDrops()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
+    public static final RegistryObject<Block> RALLEN_ORE = registerBlock("rallen_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(4f).requiresCorrectToolForDrops()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
+    public static final RegistryObject<Block> DEEPSLATE_RALLEN_ORE = registerBlock("deepslate_rallen_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(4f).requiresCorrectToolForDrops()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {

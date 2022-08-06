@@ -1,6 +1,7 @@
-package net.benjamin.ideag.item;
+package net.benjamin.ideag.item.custom;
 
 import com.google.common.collect.ImmutableMap;
+import net.benjamin.ideag.item.ModArmorMaterials;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -12,13 +13,13 @@ import net.minecraft.world.level.Level;
 
 import java.util.Map;
 
-public class ModArmorItem_A extends ArmorItem {
+public class ModArmorItem extends ArmorItem {
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    .put(ModArmorMaterials.ARES,
-                            new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1000, 20)).build();
+                    .put(ModArmorMaterials.HADES,
+                            new MobEffectInstance(MobEffects.INVISIBILITY, 1000, 50)).build();
 
-    public ModArmorItem_A(ArmorMaterial material, EquipmentSlot slot, Properties settings) {
+    public ModArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties settings) {
         super(material, slot, settings);
     }
 

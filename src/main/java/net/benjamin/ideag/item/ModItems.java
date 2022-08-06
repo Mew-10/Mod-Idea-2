@@ -1,6 +1,8 @@
 package net.benjamin.ideag.item;
 
 import net.benjamin.ideag.IdeagMod;
+import net.benjamin.ideag.fluid.ModFluids;
+import net.benjamin.ideag.item.custom.*;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -29,7 +31,7 @@ public class ModItems {
                     new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
 
     public static final RegistryObject<Item> HADES_STAFF = ITEMS.register("hades_staff",
-            () -> new SwordItem(ModTiers.HADES, 24, 1f,
+            () -> new ElectrocuteSwordItem(ModTiers.HADES, 65, 1f,
                     new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
 
     public static final RegistryObject<Item> THE_BLADE_OF_ARES = ITEMS.register("the_blade_of_ares",
@@ -53,11 +55,31 @@ public class ModItems {
                     new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
 
     public static final RegistryObject<Item> THANATOS_SCYTHE = ITEMS.register("thanatos_scythe",
-            () -> new HoeItem(ModTiers.HADES, 68, 0.5f,
+            () -> new HoeItem(ModTiers.HADES, 40, 0.5f,
                     new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
 
     public static final RegistryObject<Item> THE_BOW_OF_ARTEMIS = ITEMS.register("the_bow_of_artemis",
             () -> new BowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT).durability(500)));
+
+    public static final RegistryObject<Item> DIAMOND_AND_STEEL = ITEMS.register("diamond_and_steel",
+            () -> new FlintAndSteelItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC).durability(500)));
+
+    public static final RegistryObject<Item> AMBROSIA = ITEMS.register("ambrosia",
+            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).food(ModFoods.AMBROSIA)));
+
+    public static final RegistryObject<Item> RALLEN = ITEMS.register("rallen",
+            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
+    public static final RegistryObject<Item> RALLEN_MACE = ITEMS.register("rallen_mace",
+            () -> new MaceItem(ModTiers.RALLEN, 16, 0.6f,
+                    new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
+
+    public static final RegistryObject<Item> RALLEN_SHARD = ITEMS.register("rallen_shard",
+            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
+    public static final RegistryObject<Item> NECTOR_BOTTLE = ITEMS.register("nector_bottle",
+            () -> new BucketItem(ModFluids.NECTOR_FLUID,
+                    new Item.Properties().tab(CreativeModeTab.TAB_MISC).food(ModFoods.NECTOR)));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

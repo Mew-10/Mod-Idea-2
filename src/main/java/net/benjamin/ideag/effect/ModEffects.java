@@ -13,7 +13,7 @@ public class ModEffects {
             = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, IdeagMod.MOD_ID);
 
     public static final RegistryObject<MobEffect> ELECTROCUTE = MOB_EFFECTS.register("electrocute",
-            () -> new ElectrocuteEffect(MobEffectCategory.HARMFUL, 3124687));
+            () -> new ElectrocuteEffect(MobEffectCategory.HARMFUL, 16774738));
 
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);

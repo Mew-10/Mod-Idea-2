@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "ideag:block/magma_tnt_top",
+    "bottom": "ideag:block/magma_tnt_bottom",
+    "side": "ideag:block/magma_tnt_side"
+  }
+}
