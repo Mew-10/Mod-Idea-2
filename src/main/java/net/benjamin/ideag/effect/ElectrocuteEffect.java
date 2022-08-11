@@ -1,5 +1,6 @@
 package net.benjamin.ideag.effect;
 
+import net.benjamin.ideag.damage.ElectrocutedDamageSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -12,7 +13,7 @@ public class ElectrocuteEffect extends MobEffect {
     }
     @Override
     public void applyEffectTick(LivingEntity pLivingEntity, int pAmplifier){
-        pLivingEntity.hurt(DamageSource.GENERIC, 3);
+        pLivingEntity.hurt(ElectrocutedDamageSource.ELECTROCUTED, 3);
         if (!pLivingEntity.level.isClientSide()) {
             Double x = pLivingEntity.getX();
             Double y = pLivingEntity.getY();

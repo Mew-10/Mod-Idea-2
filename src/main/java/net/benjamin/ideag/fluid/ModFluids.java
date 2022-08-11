@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Material;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fluids.FluidAttributes;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraftforge.registries.DeferredRegister;
@@ -36,9 +37,15 @@ public class ModFluids {
             () -> NECTOR_FLUID.get(), () -> NECTOR_FLOWING.get(), FluidAttributes.builder(WATER_STILL_RL, WATER_FLOWING_RL)
             .density(15).luminosity(2).viscosity(5).sound(SoundEvents.HONEY_DRINK).overlay(WATER_OVERLAY_RL)
             .color(16774738)).slopeFindDistance(2).levelDecreasePerBlock(2)
-            .block(() -> ModFluids.NECTOR_BLOCK.get()).bucket(() -> ModItems.NECTOR_BOTTLE.get());
+            .block(() -> ModFluids.NECTOR_BLOCK.get()).bucket(() -> ModItems.NECTOR_BUCKET.get());
 
     public static final RegistryObject<LiquidBlock> NECTOR_BLOCK = ModBlocks.BLOCKS.register("nector",
             () -> new LiquidBlock(() -> ModFluids.NECTOR_FLUID.get(), BlockBehaviour.Properties.of(Material.WATER)
                     .noCollission().strength(100f).noDrops()));
+
+
+    public static void register(IEventBus eventBus){
+        FLUIDS.register(eventBus);
+    }
+
 }

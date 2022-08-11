@@ -12,6 +12,7 @@
   "item.ideag.ares_boots": "Ares Boots",
   "item.ideag.thanatos_scythe": "Thanatos's Scythe",
   "block.ideag.cracked_magma": "Cracked Magma",
+  "death.attack.electrocuted_to_death": "%1$s Was Electrocuted To Death",
 
   "item.ideg.the_bow_of_artemis": "The Bow Of Artemis"
 }

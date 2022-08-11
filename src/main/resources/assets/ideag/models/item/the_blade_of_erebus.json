@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "ideag:item/the_blade_of_erebus"
+  }
+}

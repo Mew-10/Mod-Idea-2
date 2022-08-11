@@ -77,10 +77,16 @@ public class ModItems {
     public static final RegistryObject<Item> RALLEN_SHARD = ITEMS.register("rallen_shard",
             () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
-    public static final RegistryObject<Item> NECTOR_BOTTLE = ITEMS.register("nector_bottle",
+    public static final RegistryObject<Item> NECTOR_BUCKET = ITEMS.register("nector_bucket",
             () -> new BucketItem(ModFluids.NECTOR_FLUID,
-                    new Item.Properties().tab(CreativeModeTab.TAB_MISC).food(ModFoods.NECTOR)));
-    public static void register(IEventBus eventBus) {
+                    new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
+    public static final RegistryObject<Item> THE_BLADE_OF_EREBUS = ITEMS.register("the_blade_of_erebus",
+            () -> new DarknessSwordItem(ModTiers.EREBUS, 57, 0.6f,
+                    new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
+
+
+    public static void register (IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
 }

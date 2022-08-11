@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "ideag:item/nector_bottle"
+    "layer0": "ideag:item/nector_bucket"
   }
 }

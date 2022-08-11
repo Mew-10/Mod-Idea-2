@@ -22,4 +22,8 @@ public class ModTiers {
             12f, 26, BlockTags.NEEDS_DIAMOND_TOOL,
             () -> Ingredient.of(ModItems.RALLEN.get()));
 
+    public static final ForgeTier EREBUS = new ForgeTier(75, 65000, 0.8f,
+            47f, 50, BlockTags.NEEDS_DIAMOND_TOOL,
+            () -> Ingredient.of(ModItems.RALLEN.get()));
+
 }

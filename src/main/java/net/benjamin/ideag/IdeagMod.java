@@ -2,13 +2,20 @@ package net.benjamin.ideag;
 
 import com.mojang.logging.LogUtils;
 import net.benjamin.ideag.block.ModBlocks;
+import net.benjamin.ideag.block.entity.ModBlockEntities;
 import net.benjamin.ideag.config.IdeagCommonConfigs;
 import net.benjamin.ideag.effect.ModEffects;
+import net.benjamin.ideag.enchantment.ModEnchantments;
+import net.benjamin.ideag.fluid.ModFluids;
 import net.benjamin.ideag.item.ModItems;
 import net.benjamin.ideag.potion.BetterBrewingRecipe;
 import net.benjamin.ideag.potion.ModPotions;
+import net.benjamin.ideag.recipe.ModRecipes;
+import net.benjamin.ideag.screen.HephaestusForgeScreen;
+import net.benjamin.ideag.screen.ModMenuTypes;
 import net.benjamin.ideag.util.ModItemProperties;
 import net.benjamin.ideag.villager.ModVillagers;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
@@ -42,6 +49,12 @@ public class IdeagMod
         ModPotions.register(eventBus);
         ModEffects.register(eventBus);
         ModVillagers.register(eventBus);
+        ModFluids.register(eventBus);
+        ModBlockEntities.register(eventBus);
+        ModEnchantments.register(eventBus);
+        ModMenuTypes.register(eventBus);
+        ModRecipes.register(eventBus);
+        ModBlockEntities.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
@@ -53,6 +66,7 @@ public class IdeagMod
     }
     private void clientSetup(final FMLClientSetupEvent event) {
         ModItemProperties.addCustomItemProperties();
+        MenuScreens.register(ModMenuTypes.HEPHAESTUS_FORGE_MENU.get(), HephaestusForgeScreen::new);
     }
 
     private void setup(final FMLCommonSetupEvent event)

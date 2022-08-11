@@ -1,0 +1,14 @@
+{
+  "type": "ideag:hephaestus_forgeing",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "ideag:rallen_shard"
+    }
+  ],
+  "output": {
+    "item": "ideag:rallen"
+  }
+}
