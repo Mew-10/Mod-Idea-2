@@ -6,6 +6,7 @@ import net.benjamin.ideag.block.entity.ModBlockEntities;
 import net.benjamin.ideag.config.IdeagCommonConfigs;
 import net.benjamin.ideag.effect.ModEffects;
 import net.benjamin.ideag.enchantment.ModEnchantments;
+import net.benjamin.ideag.entity.ModEntityTypes;
 import net.benjamin.ideag.fluid.ModFluids;
 import net.benjamin.ideag.item.ModItems;
 import net.benjamin.ideag.potion.BetterBrewingRecipe;
@@ -16,6 +17,10 @@ import net.benjamin.ideag.screen.ModMenuTypes;
 import net.benjamin.ideag.util.ModItemProperties;
 import net.benjamin.ideag.villager.ModVillagers;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.server.commands.OpCommand;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
@@ -30,6 +35,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import software.bernie.geckolib3.GeckoLib;
+
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(IdeagMod.MOD_ID)
@@ -46,18 +53,22 @@ public class IdeagMod
 
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
-        ModPotions.register(eventBus);
-        ModEffects.register(eventBus);
-        ModVillagers.register(eventBus);
+        ModEnchantments.register(eventBus);
         ModFluids.register(eventBus);
         ModBlockEntities.register(eventBus);
-        ModEnchantments.register(eventBus);
         ModMenuTypes.register(eventBus);
         ModRecipes.register(eventBus);
-        ModBlockEntities.register(eventBus);
+        ModEffects.register(eventBus);
+        ModPotions.register(eventBus);
+        ModVillagers.register(eventBus);
+
+
+        ModEntityTypes.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
+
+        GeckoLib.initialize();
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, IdeagCommonConfigs.SPEC, "ideag-common.toml");
 
@@ -66,6 +77,9 @@ public class IdeagMod
     }
     private void clientSetup(final FMLClientSetupEvent event) {
         ModItemProperties.addCustomItemProperties();
+
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.HEPHAESTUS_FORGE.get(), RenderType.cutout());
+
         MenuScreens.register(ModMenuTypes.HEPHAESTUS_FORGE_MENU.get(), HephaestusForgeScreen::new);
     }
 

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "ideag:block/hephaestus_forge" },
+    "facing=east": { "model": "ideag:block/hephaestus_forge", "y": 90 },
+    "facing=south": { "model": "ideag:block/hephaestus_forge", "y": 180 },
+    "facing=west": { "model": "ideag:block/hephaestus_forge", "y": 270 }
+  }
+}

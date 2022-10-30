@@ -28,7 +28,7 @@ public class SummonGolemEnchantment extends Enchantment {
                 EntityType.IRON_GOLEM.spawn(world, null, player, position,
                         MobSpawnType.TRIGGERED, true, true);
 
-                EntityType.ILLUSIONER.spawn(world, null, player, position,
+                EntityType.IRON_GOLEM.spawn(world, null, player, position,
                         MobSpawnType.TRIGGERED, true, true);
             }
         }

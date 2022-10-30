@@ -21,7 +21,7 @@ public class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<HephaestusForgeBlockEntity>> HEPHAESTUS_FORGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("hephaestus_forge_block_entity", () ->
                     BlockEntityType.Builder.of(HephaestusForgeBlockEntity::new,
-                            ModBlocks.PEDESTAL.get()).build(null));
+                            ModBlocks.HEPHAESTUS_FORGE.get()).build(null));
 
 
 

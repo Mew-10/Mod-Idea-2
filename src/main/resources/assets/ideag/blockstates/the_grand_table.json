@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "ideag:block/the_grand_table" },
+    "facing=east": { "model": "ideag:block/the_grand_table", "y": 90 },
+    "facing=south": { "model": "ideag:block/the_grand_table", "y": 180 },
+    "facing=west": { "model": "ideag:block/the_grand_table", "y": 270 }
+  }
+}

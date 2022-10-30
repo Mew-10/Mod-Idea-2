@@ -10,6 +10,10 @@ public class ModTiers {
             25f, 60, BlockTags.NEEDS_DIAMOND_TOOL,
             () -> Ingredient.of(Items.NETHERITE_INGOT));
 
+    public static final ForgeTier HERO = new ForgeTier(10, 1000, 0.8f,
+            13f, 60, BlockTags.NEEDS_DIAMOND_TOOL,
+            () -> Ingredient.of(Items.NETHERITE_INGOT));
+
     public static final ForgeTier ARES = new ForgeTier(19, 2000, 0.9f,
             20f, 60, BlockTags.NEEDS_DIAMOND_TOOL,
             () -> Ingredient.of(Items.REDSTONE));
@@ -24,6 +28,10 @@ public class ModTiers {
 
     public static final ForgeTier EREBUS = new ForgeTier(75, 65000, 0.8f,
             47f, 50, BlockTags.NEEDS_DIAMOND_TOOL,
+            () -> Ingredient.of(ModItems.RALLEN.get()));
+
+    public static final ForgeTier COSMOS = new ForgeTier(1000, 650000, 0.4f,
+            77f, 50, BlockTags.NEEDS_DIAMOND_TOOL,
             () -> Ingredient.of(ModItems.RALLEN.get()));
 
 }

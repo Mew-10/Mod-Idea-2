@@ -46,8 +46,13 @@ public class ModBlocks {
             () -> new PedestalBlock(BlockBehaviour.Properties.of(Material.STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     public static final RegistryObject<Block> HEPHAESTUS_FORGE = registerBlock("hephaestus_forge",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+            () -> new HephaestusForgeBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
+    public static final RegistryObject<Block> THE_GRAND_TABLE = registerBlock("the_grand_table",
+            () -> new TheGrandTableBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
+    //public static final RegistryObject<Block> DEPTH_EXPLORER = registerBlock("depth_explorer",
+            //() -> new DepthExplorerBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

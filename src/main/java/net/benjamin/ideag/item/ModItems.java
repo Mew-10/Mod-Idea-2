@@ -1,14 +1,20 @@
 package net.benjamin.ideag.item;
 
+import it.unimi.dsi.fastutil.objects.ReferenceOpenHashSet;
 import net.benjamin.ideag.IdeagMod;
 import net.benjamin.ideag.fluid.ModFluids;
 import net.benjamin.ideag.item.custom.*;
+import net.minecraft.core.Position;
+import net.minecraft.core.Registry;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.Objects;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -35,7 +41,7 @@ public class ModItems {
                     new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
 
     public static final RegistryObject<Item> THE_BLADE_OF_ARES = ITEMS.register("the_blade_of_ares",
-            () -> new SwordItem(ModTiers.HADES, 50, 0.3f,
+            () -> new SwordItem(ModTiers.ARES, 50, 0.3f,
                     new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
 
     public static final RegistryObject<Item> ARES_HELMET = ITEMS.register("ares_helmet",
@@ -82,7 +88,22 @@ public class ModItems {
                     new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
     public static final RegistryObject<Item> THE_BLADE_OF_EREBUS = ITEMS.register("the_blade_of_erebus",
-            () -> new DarknessSwordItem(ModTiers.EREBUS, 57, 0.6f,
+            () -> new DarknessSwordItem(ModTiers.EREBUS, 750, 0.6f,
+                    new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
+
+    public static final RegistryObject<Item> GODLEY_STAFF_OF_POWER = ITEMS.register("godley_staff_of_power",
+            () -> new GodleyStaffOfPowerItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)));
+
+    public static final RegistryObject<Item> THE_SWORD_OF_THANATOS = ITEMS.register("the_sword_of_thanatos",
+            () -> new DarknessSwordItem(ModTiers.THANATOS, 500, 0.6f,
+                    new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
+
+    public static final RegistryObject<Item> SICKEL_OF_THE_COSMOS = ITEMS.register("sickel_of_the_cosmos",
+            () -> new DarknessSwordItem(ModTiers.COSMOS, 1000, 0.6f,
+                    new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
+
+    public static final RegistryObject<Item> HARPE = ITEMS.register("harpe",
+            () -> new SwordItem(ModTiers.HERO, 18, 0.6f,
                     new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
 
 

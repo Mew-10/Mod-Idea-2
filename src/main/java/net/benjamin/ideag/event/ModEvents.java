@@ -3,6 +3,8 @@ package net.benjamin.ideag.event;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.benjamin.ideag.IdeagMod;
 import net.benjamin.ideag.block.ModBlocks;
+import net.benjamin.ideag.entity.ModEntityTypes;
+import net.benjamin.ideag.entity.custom.MedusaEntity;
 import net.benjamin.ideag.item.ModItems;
 import net.benjamin.ideag.villager.ModVillagers;
 import net.minecraft.world.entity.npc.VillagerTrades;
@@ -11,6 +13,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -70,5 +73,11 @@ public class ModEvents {
                 }
             }
         }
+    }
+
+
+    @SubscribeEvent
+    public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
+        event.put(ModEntityTypes.MEDUSA.get(), MedusaEntity.setAttributes());
     }
 }

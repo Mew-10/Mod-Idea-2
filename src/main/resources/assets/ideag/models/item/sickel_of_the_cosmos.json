@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "ideag:item/sickel_of_the_cosmos"
+  }
+}

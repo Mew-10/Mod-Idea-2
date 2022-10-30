@@ -13,6 +13,11 @@
   "item.ideag.thanatos_scythe": "Thanatos's Scythe",
   "block.ideag.cracked_magma": "Cracked Magma",
   "death.attack.electrocuted_to_death": "%1$s Was Electrocuted To Death",
+  "death.attack.pricked_to_death": "%1$s Was Pricked To Death",
 
-  "item.ideg.the_bow_of_artemis": "The Bow Of Artemis"
+  "item.ideg.the_bow_of_artemis": "The Bow Of Artemis",
+
+  "tooltip.ideag.godley_staff_of_power.tooltip.shift": "Right Click to find Valuables!",
+  "tooltip.ideag.godley_staff_of_power.tooltip": "Press §eSHIFT§r for more Information!",
+  "item.ideag.godley_staff_of_power.no_valuables": "No Valuables Found!"
 }

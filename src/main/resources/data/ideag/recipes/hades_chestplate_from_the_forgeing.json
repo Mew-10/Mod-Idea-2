@@ -1,0 +1,14 @@
+{
+  "type": "ideag:hephaestus_forgeing",
+  "ingredients": [
+    {
+      "item": "ideag:cracked_magma"
+    },
+    {
+      "item": "minecraft:netherite_chestplate"
+    }
+  ],
+  "output": {
+    "item": "ideag:hades_chestplate"
+  }
+}

@@ -1,7 +1,6 @@
 package net.benjamin.ideag.recipe;
 
 import net.benjamin.ideag.IdeagMod;
-import net.minecraft.core.Registry;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,6 +16,5 @@ public class ModRecipes {
 
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
-        Registry.register(Registry.RECIPE_TYPE, HephaestusForgeRecipe.Type.ID, HephaestusForgeRecipe.Type.INSTANCE);
     }
 }
