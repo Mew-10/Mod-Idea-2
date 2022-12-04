@@ -76,8 +76,5 @@ public class ModEvents {
     }
 
 
-    @SubscribeEvent
-    public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
-        event.put(ModEntityTypes.MEDUSA.get(), MedusaEntity.setAttributes());
-    }
+
 }

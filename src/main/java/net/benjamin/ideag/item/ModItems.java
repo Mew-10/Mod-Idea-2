@@ -1,14 +1,12 @@
 package net.benjamin.ideag.item;
 
-import it.unimi.dsi.fastutil.objects.ReferenceOpenHashSet;
 import net.benjamin.ideag.IdeagMod;
+import net.benjamin.ideag.entity.ModEntityTypes;
 import net.benjamin.ideag.fluid.ModFluids;
 import net.benjamin.ideag.item.custom.*;
-import net.minecraft.core.Position;
-import net.minecraft.core.Registry;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -106,6 +104,9 @@ public class ModItems {
             () -> new SwordItem(ModTiers.HERO, 18, 0.6f,
                     new Item.Properties().tab(CreativeModeTab.TAB_COMBAT)));
 
+    public static final RegistryObject<ForgeSpawnEggItem> MEDUSA_SPAWN_EGG = ITEMS.register("tiger_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.MEDUSA,0xfcb603, 0x242321,
+                    new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
     public static void register (IEventBus eventBus) {
         ITEMS.register(eventBus);

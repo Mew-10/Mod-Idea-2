@@ -17,7 +17,7 @@ public class ModEntityTypes {
     public static final RegistryObject<EntityType<MedusaEntity>> MEDUSA =
             ENTITY_TYPES.register("medusa",
                     () -> EntityType.Builder.of(MedusaEntity::new, MobCategory.CREATURE)
-                            .sized(0.25F, 0.25F)
+                            .sized(0.6F, 2.3F)
                             .build(new ResourceLocation(IdeagMod.MOD_ID, "medusa").toString()));
 
 

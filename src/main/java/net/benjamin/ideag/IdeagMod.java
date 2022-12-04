@@ -7,6 +7,7 @@ import net.benjamin.ideag.config.IdeagCommonConfigs;
 import net.benjamin.ideag.effect.ModEffects;
 import net.benjamin.ideag.enchantment.ModEnchantments;
 import net.benjamin.ideag.entity.ModEntityTypes;
+import net.benjamin.ideag.entity.client.MedusaRenderer;
 import net.benjamin.ideag.fluid.ModFluids;
 import net.benjamin.ideag.item.ModItems;
 import net.benjamin.ideag.potion.BetterBrewingRecipe;
@@ -19,6 +20,7 @@ import net.benjamin.ideag.villager.ModVillagers;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.server.commands.OpCommand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -76,6 +78,9 @@ public class IdeagMod
         MinecraftForge.EVENT_BUS.register(this);
     }
     private void clientSetup(final FMLClientSetupEvent event) {
+
+        EntityRenderers.register(ModEntityTypes.MEDUSA.get(), MedusaRenderer::new);
+
         ModItemProperties.addCustomItemProperties();
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.HEPHAESTUS_FORGE.get(), RenderType.cutout());
